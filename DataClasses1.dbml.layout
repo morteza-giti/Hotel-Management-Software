@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="6f9fa109-fcde-4dcb-bac9-4d359e81ed7a" absoluteBounds="0.5, 2.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClasses1DataContext/tblMember" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1fef1a4-66c3-4af1-8c30-ebc029ef3567" absoluteBounds="0.51499999999999968, 2.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="602ff022-7857-474b-90fb-7e837a165ce4" absoluteBounds="5.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/tblPayment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf0dece5-b02c-4df3-a262-9e9ae226d3ef" absoluteBounds="5.515, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6236a2f6-a889-418a-82e7-0422b104ef1f" absoluteBounds="3, 1.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClasses1DataContext/tblReservation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17abf6ef-7a09-4b53-bb83-7b21e6175385" absoluteBounds="3.015, 2.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 3.36620198567708); (2.5 : 3.36620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/tblReservation/tblReservation_tblMember" />
+      <nodes>
+        <classShapeMoniker Id="6236a2f6-a889-418a-82e7-0422b104ef1f" />
+        <classShapeMoniker Id="6f9fa109-fcde-4dcb-bac9-4d359e81ed7a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 1.75); (4 : 1.1249995); (5.5 : 1.1249995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/tblReservation/tblReservation_tblPayment" />
+      <nodes>
+        <classShapeMoniker Id="6236a2f6-a889-418a-82e7-0422b104ef1f" />
+        <classShapeMoniker Id="602ff022-7857-474b-90fb-7e837a165ce4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d906f26a-f15f-4548-9ade-a609ef8b9190" absoluteBounds="5.5, 3.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/tblRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48f30453-085e-49bf-b6f2-2fb1e5ad74b9" absoluteBounds="5.515, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 3.86620198567708); (5 : 3.86620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/tblRoom/tblRoom_tblReservation" />
+      <nodes>
+        <classShapeMoniker Id="d906f26a-f15f-4548-9ade-a609ef8b9190" />
+        <classShapeMoniker Id="6236a2f6-a889-418a-82e7-0422b104ef1f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1534777b-d0ca-49b4-a984-4e42f4fac125" absoluteBounds="0.5, 0.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClasses1DataContext/tblUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb603f9a-f4ea-4e77-ad57-afa7c1ff87bc" absoluteBounds="0.51500000000000012, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

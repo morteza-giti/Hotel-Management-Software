@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HotelManagementSoftwareDataBase" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Data\HotelManagementSoftwareDataBase.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True" SettingsObjectName="HotelManagementSoftware.Properties.Settings" SettingsPropertyName="HotelManagementSoftwareDataBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblMembers" Member="tblMembers">
+    <Type Name="tblMember">
+      <Column Name="MemberCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReservationCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Popularity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NationId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BirthPlace" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblReservation_tblMember" Member="tblReservation" ThisKey="ReservationCode" OtherKey="ReservationCode" Type="tblReservation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPayment" Member="tblPayments">
+    <Type Name="tblPayment">
+      <Column Name="PaymentCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReservationCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="tblReservation_tblPayment" Member="tblReservation" ThisKey="ReservationCode" OtherKey="ReservationCode" Type="tblReservation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReservation" Member="tblReservations">
+    <Type Name="tblReservation">
+      <Column Name="ReservationCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Popularity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RoomCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumsOfDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="tblReservation_tblMember" Member="tblMembers" ThisKey="ReservationCode" OtherKey="ReservationCode" Type="tblMember" />
+      <Association Name="tblReservation_tblPayment" Member="tblPayments" ThisKey="ReservationCode" OtherKey="ReservationCode" Type="tblPayment" />
+      <Association Name="tblRoom_tblReservation" Member="tblRoom" ThisKey="RoomCode" OtherKey="RoomCode" Type="tblRoom" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRoom" Member="tblRooms">
+    <Type Name="tblRoom">
+      <Column Name="RoomCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NumsOfBed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="tblRoom_tblReservation" Member="tblReservations" ThisKey="RoomCode" OtherKey="RoomCode" Type="tblReservation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUser" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
